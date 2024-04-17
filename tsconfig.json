@@ -9,6 +9,7 @@
 
 		/* Modules */
 		"module": "CommonJS",
+		"types": ["jest", "jest-extended", "node"],
 		// "moduleResolution": "Node16",
 
 		/* Emit */

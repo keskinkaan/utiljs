@@ -22,7 +22,7 @@ const config: JestConfigWithTsJest = {
 		]
 	},
 	preset: 'ts-jest',
-	testEnvironment: 'JSDom',
+	testEnvironment: 'node',
 	roots: ['<rootDir>']
 };
 

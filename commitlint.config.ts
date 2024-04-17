@@ -43,7 +43,7 @@ const scopePathObj = {
 /**
  * Top level paths are sorted and appended to the list of paths as-is.
  */
-const pathArr = ['husky', 'vscode', 'eslint', 'prettier', 'utiljs'];
+const pathArr = ['husky', 'vscode', 'eslint', 'prettier'];
 
 /**
  * Retrieves an array of subdirectory names within the specified directory.

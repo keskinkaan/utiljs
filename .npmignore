@@ -1,0 +1,38 @@
+#folders to ignore
+.git
+.github
+.husky
+.vscode
+coverage
+docs
+html-report
+node_modules
+src
+
+#files to ignore
+.czrc
+.eslintignore
+.eslintrc.yaml
+.gitignore
+.lintstagedrc
+.nvmrc
+.prettierignore
+.prettierrc.yaml
+commitlint.config.ts
+jest.config.ts
+pnpm-lock.yaml
+tsconfig.json
+
+#log folder and files to ignore
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+#OS generated files to ignore
+.idea
+.DS_Store
+
+#project config files to ignore
+.env
+.pnpm-store
