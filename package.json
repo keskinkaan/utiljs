@@ -33,6 +33,7 @@
     "prettify": "prettier --write \"./src/**/*.ts\"",
     "format": "pnpm run prettify && pnpm run lint",
     "ci": "pnpm run format && pnpm run test && pnpm run build",
+    "relase": "pnpm run ci && changeset publish",
     "prepare": "husky install"
   },
   "devDependencies": {
