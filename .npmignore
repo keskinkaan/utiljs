@@ -1,4 +1,5 @@
 #folders to ignore
+.changeset
 .git
 .github
 .husky

@@ -14,7 +14,7 @@
     "url": "https://www.github.com/keskinkaan/utiljs"
   },
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "bugs": {
     "url": "https://www.github.com/keskinkaan/utiljs/issues"
   },
@@ -33,7 +33,7 @@
     "prettify": "prettier --write \"./src/**/*.ts\"",
     "format": "pnpm run prettify && pnpm run lint",
     "ci": "pnpm run format && pnpm run test && pnpm run build",
-    "relase": "pnpm run ci && changeset publish",
+    "release": "pnpm run ci && changeset publish",
     "prepare": "husky install"
   },
   "devDependencies": {
