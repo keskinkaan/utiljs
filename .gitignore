@@ -1,0 +1,21 @@
+#folders to ignore
+node_modules
+build
+dist
+coverage
+html-report
+docs
+
+#log folder and files to ignore
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+#OS generated files to ignore
+.idea
+.DS_Store
+
+#project config files to ignore
+.env
+.pnpm-store

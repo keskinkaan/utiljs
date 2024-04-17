@@ -1,0 +1,106 @@
+root: true
+
+# ⭐ Env
+env:
+  es6: true
+  node: true
+  jest: true
+
+# ⭐ Extends
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended-type-checked
+  - prettier
+
+# ⭐ Settings
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - '.js'
+        - '.ts'
+        - '.json'
+
+# ⭐ Parser
+parser: '@typescript-eslint/parser'
+
+# ⭐ Parser Options
+parserOptions:
+  ecmaVersion: 'latest'
+  sourceType: 'module'
+  project:
+    - './tsconfig.json'
+  tsconfigRootDir: './'
+
+# ⭐ Overrides
+overrides:
+  - files:
+      - '*.js'
+    extends:
+      - 'plugin:@typescript-eslint/disable-type-checked'
+
+# ⭐ Plugins
+plugins:
+  - '@typescript-eslint'
+  - 'eslint-plugin-prettier'
+  - 'prettier'
+
+# ⭐ Ignore
+ignorePatterns:
+  - '**/*/.css'
+  - '**/*/.scss'
+
+# ⭐ Rules
+rules:
+  # ⭐ Prettier
+  prettier/prettier:
+    [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'none',
+        bracketSpacing: true,
+        tabWidth: 2,
+        printWidth: 80
+      }
+    ]
+  # ⭐ No Console
+  no-console: 'error'
+  # ⭐ No Unused Variables
+  no-unused-vars: 'error'
+  # ⭐ Quotes
+  quotes:
+    - 'error'
+    - 'single'
+  # ⭐ Camelcase
+  camelcase: 'error'
+  # ⭐ No Alert
+  no-alert: 'error'
+  # ⭐ No Debuggers
+  no-debugger: 'error'
+  # ⭐ No Empty Function
+  no-empty-function: 'error'
+  # ⭐ Check Types and values
+  eqeqeq: 'error'
+  # ⭐ No Guard For In Loop
+  guard-for-in: 'error'
+  # ⭐ No Multiple Strings
+  no-multi-str: 'error'
+  # ⭐ No New Wrappers
+  no-new-wrappers: 'error'
+  # ⭐ No Proto Properties
+  no-proto: 'error'
+  # ⭐ No Self Compare
+  no-self-compare: 'error'
+  # ⭐ No Useless Concat
+  no-useless-concat: 'error'
+  # ⭐ No Inner Declarations
+  no-inner-declarations: 'error'
+  # ⭐ No Unsafe Optional Chaining
+  no-unsafe-optional-chaining: 'error'
+  # ⭐ No Mixed Spaces and Tabs
+  no-mixed-spaces-and-tabs:
+    - 'error'
+    - 'smart-tabs'
+  # ⭐ Function Parentheses Newline
+  function-paren-newline: 'off'
