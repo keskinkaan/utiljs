@@ -1,0 +1,13 @@
+export { isArr } from './isArr';
+export { isBase64 } from './isBase64';
+export { isBeJson } from './isBeJson';
+export { isBool } from './isBool';
+export { isEmptyStr } from './isEmptyStr';
+export { isFunc } from './isFunc';
+export { isJson } from './isJson';
+export { isNil } from './isNil';
+export { isNum } from './isNum';
+export { isObj } from './isObj';
+export { isStr } from './isStr';
+export { isSym } from './isSym';
+export { isUndef } from './isUndef';
