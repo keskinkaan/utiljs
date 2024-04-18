@@ -1,6 +1,6 @@
 {
   "name": "@kinbay/utiljs",
-  "description": "",
+  "description": "A collection of utility functions for JavaScript",
   "author": {
     "name": "Kaan Keskin",
     "email": "keskinkaan@gmail.com"
@@ -11,18 +11,18 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "github",
-    "url": "https://www.github.com/keskinkaan/utiljs"
+    "url": "git+https://github.com/keskinkaan/utiljs.git"
   },
   "private": false,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "bugs": {
     "url": "https://www.github.com/keskinkaan/utiljs/issues"
   },
   "homepage": "https://www.github.com/keskinkaan/utiljs",
-  "packageManager": "pnpm@8.15.7",
+  "packageManager": "pnpm@9.0.1",
   "engines": {
     "node": ">=21.1.0",
-    "pnpm": ">=8.15.7"
+    "pnpm": ">=9.0.1"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
