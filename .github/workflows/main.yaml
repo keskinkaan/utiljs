@@ -21,5 +21,11 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
           cache: 'pnpm'
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: keskinkaan/utiljs
+
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm run lint && pnpm run build
