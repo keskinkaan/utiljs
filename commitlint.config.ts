@@ -37,7 +37,7 @@ import fs from 'node:fs';
  * The object specifying the scope paths for different categories.
  */
 const scopePathObj = {
-	src: ['checker', 'guarder', 'types']
+	src: ['checker', 'enums', 'guarder', 'logger', 'types']
 };
 
 /**
