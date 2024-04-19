@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.5.0
+
+### Minor Changes
+
+- enums and logger have been added
+
 ## 0.4.1
 
 ### Patch Changes
