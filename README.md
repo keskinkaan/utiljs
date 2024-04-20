@@ -17,3 +17,4 @@
 ![CI](https://img.shields.io/github/actions/workflow/status/keskinkaan/utiljs/main.yaml?branch=dev&color=blue)
 ![Stars](https://img.shields.io/github/stars/keskinkaan/utiljs)
 ![Forks](https://img.shields.io/github/forks/keskinkaan/utiljs)
+![Test](https://img.shields.io/codecov/c/github/keskinkaan/utiljs)
