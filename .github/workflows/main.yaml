@@ -12,7 +12,8 @@ jobs:
         run: echo "{NVMRC}={cat .nvmrc}" >> $(cat .nvmrc)
         id: nvm
 
-      - uses: pnpm/action-setup@v2.4.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
         with:
           version: 9.0.1
 
@@ -21,14 +22,11 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
           cache: 'pnpm'
 
-      
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
-      - uses: codecov/codecov-action@v4.0.1
-        name: Upload coverage reports to Codecov
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: keskinkaan/utiljs
+      - name: Run tests
+        run: pnpm test
 
-      - run: pnpm install --no-frozen-lockfile
-      - run: pnpm run format && pnpm run build
-      - run: pnpm run test
+      - name: Build
+        run: pnpm run format && pnpm run build
