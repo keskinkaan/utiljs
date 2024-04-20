@@ -21,7 +21,7 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
           cache: 'pnpm'
 
-      - run: pnpm run test
+      
 
       - uses: codecov/codecov-action@v4.0.1
         name: Upload coverage reports to Codecov
@@ -31,3 +31,4 @@ jobs:
 
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm run format && pnpm run build
+      - run: pnpm run test
