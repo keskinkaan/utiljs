@@ -58,7 +58,7 @@ export class Logger {
 		this.nameSpace = nameSpace;
 		switch (logLevel) {
 			case ELogLevel.ERROR:
-				if (this.logState === ELogState.Error) {
+				if (this.logState >= ELogState.Error) {
 					this.logLevel = ELogLevel.ERROR;
 					if (this.isNode()) {
 						this.consoleText = `[\u001b[38;5;196mError\u001b[0m][\u001b[38;5;247m${this.fd()}\u001b[0m][\u001b[38;5;196m${nameSpace}\u001b[0m]`;
@@ -70,7 +70,7 @@ export class Logger {
 				}
 				break;
 			case ELogLevel.WARN:
-				if (this.logState === ELogState.Warn) {
+				if (this.logState >= ELogState.Warn) {
 					this.logLevel = ELogLevel.WARN;
 					if (this.isNode()) {
 						this.consoleText = `[\u001b[38;5;214mWarn\u001b[0m][\u001b[38;5;247m${this.fd()}\u001b[0m][\u001b[38;5;214m${nameSpace}\u001b[0m]`;
@@ -82,7 +82,7 @@ export class Logger {
 				}
 				break;
 			case ELogLevel.INFO:
-				if (this.logState === ELogState.Info) {
+				if (this.logState >= ELogState.Info) {
 					this.logLevel = ELogLevel.INFO;
 					if (this.isNode()) {
 						this.consoleText = `[\u001b[38;5;75mInfo\u001b[0m][\u001b[38;5;247m${this.fd()}\u001b[0m][\u001b[38;5;75m${nameSpace}\u001b[0m]`;
@@ -94,7 +94,7 @@ export class Logger {
 				}
 				break;
 			case ELogLevel.SUCCESS:
-				if (this.logState === ELogState.Success) {
+				if (this.logState >= ELogState.Success) {
 					this.logLevel = ELogLevel.SUCCESS;
 					if (this.isNode()) {
 						this.consoleText = `[\u001b[38;5;49mSuccess\u001b[0m][\u001b[38;5;247m${this.fd()}\u001b[0m][\u001b[38;5;49m${nameSpace}\u001b[0m]`;
@@ -106,7 +106,7 @@ export class Logger {
 				}
 				break;
 			case ELogLevel.DEBUG:
-				if (this.logState === ELogState.Debug) {
+				if (this.logState >= ELogState.Debug) {
 					this.logLevel = ELogLevel.DEBUG;
 					if (this.isNode()) {
 						this.consoleText = `[\u001b[38;5;33mDebug\u001b[0m][\u001b[38;5;247m${this.fd()}\u001b[0m][\u001b[38;5;33m${nameSpace}\u001b[0m]`;
