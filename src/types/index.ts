@@ -1,3 +1,4 @@
 export type { TGuard } from './TGuard';
+export type { TListener } from './TListener';
 export type { TOV } from './TTypeOfValue';
-export * from './TLogger';
+export type { TLogLevel, TLogState } from './TLogger';
