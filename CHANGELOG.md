@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.7.0
+
+### Minor Changes
+
+- Router has been added
+
 ## 0.6.2
 
 ### Patch Changes
