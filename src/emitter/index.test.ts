@@ -25,7 +25,7 @@ describe('EventEmitter', () => {
 		const listener = jest.fn();
 		emitter.on('testEvent', listener);
 		emitter.off('testEvent', listener);
-		expect(emitter['eventListeners']['testEvent']).not.toContain(listener);
+		expect(emitter['eventListeners']['testEvent']).toBe(undefined);
 	});
 
 	it('should remove all listeners from event', () => {

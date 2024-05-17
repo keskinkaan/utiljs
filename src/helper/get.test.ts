@@ -37,4 +37,9 @@ describe('Helper: Get', () => {
 		const value = get(obj, 'user.email', 'Anonymous') as string;
 		expect(value).toBe('Anonymous');
 	});
+
+	it('should get value from object by empty array', () => {
+		const value = get(obj, []) as string;
+		expect(value).toStrictEqual({ user: { id: 1, name: 'John Doe' } });
+	});
 });

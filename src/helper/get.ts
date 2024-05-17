@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 /**
  * ### Get value from object by path
  * @since 0.6.0
@@ -31,15 +28,21 @@
  * @category Helper
  */
 export function get(
-	obj: Record<string, any>,
+	obj: Record<string, unknown>,
 	path: string | Array<string>,
-	defValue?: any
-) {
-	if (!path) return undefined;
+	defValue?: unknown
+): unknown {
+	if (!path) return defValue;
 
 	const pathArray = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
-	const result = pathArray?.reduce((prevObj, key) => {
-		return prevObj && prevObj[key];
+	if (!pathArray) return defValue;
+
+	const result = pathArray.reduce<unknown>((prevObj, key) => {
+		if (prevObj && typeof prevObj === 'object' && key in prevObj) {
+			return (prevObj as Record<string, unknown>)[key];
+		}
+		return undefined;
 	}, obj);
+
 	return result === undefined ? defValue : result;
 }
