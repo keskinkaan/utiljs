@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.6.1
+
+### Patch Changes
+
+- Some error have been fixed
+
 ## 0.6.0
 
 ### Minor Changes
