@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.7.1
+
+### Patch Changes
+
+- pnpm version changed
+
 ## 0.7.0
 
 ### Minor Changes

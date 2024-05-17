@@ -40,7 +40,7 @@
     <img src="https://img.shields.io/node/v/%40kinbay%2Futiljs" alt="Version Node"/> 
   </a>
   <a href="https://pnpm.io/installation" target="_blank">
-    <img src="https://img.shields.io/badge/pnpm-%3E%3D%209.1.0-blue.svg" alt="Version Pnpm"/> 
+    <img src="https://img.shields.io/badge/pnpm-%3E%3D%209.0.1-blue.svg" alt="Version Pnpm"/> 
   </a>
 </p>
 
