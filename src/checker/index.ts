@@ -3,6 +3,7 @@ export { isBase64 } from './isBase64';
 export { isBeJson } from './isBeJson';
 export { isBool } from './isBool';
 export { isEmptyStr } from './isEmptyStr';
+export { isEqual } from './isEqual';
 export { isFunc } from './isFunc';
 export { isJson } from './isJson';
 export { isNil } from './isNil';

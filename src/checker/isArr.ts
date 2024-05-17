@@ -12,7 +12,7 @@
  * @returns If the given value is an `array`, it will be returns `true`. If the given value is not an `array`, it will be returns `false`.
  *
  * @example
- * ```js
+ * ```ts
  * import { Checker } from '@kinbay/utiljs';
  *
  * const a = [1, 2, 3];

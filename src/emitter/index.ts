@@ -38,15 +38,18 @@ export class EventEmitter<EventMap extends Record<string, Array<unknown>>> {
 		eventName: K,
 		listener: TListener<EventMap[K]>
 	) {
-		const listeners = this.eventListeners[eventName] ?? new Set();
-		listeners.add(listener);
-		this.eventListeners[eventName] = listeners;
+		if (!this.eventListeners[eventName]) {
+			this.eventListeners[eventName] = new Set();
+		}
+		this.eventListeners[eventName]!.add(listener);
 	}
 
 	public emit<K extends keyof EventMap>(eventName: K, ...args: EventMap[K]) {
-		const listeners = this.eventListeners[eventName] ?? new Set();
-		for (const listener of listeners) {
-			listener(...args);
+		const listeners = this.eventListeners[eventName];
+		if (listeners) {
+			for (const listener of listeners) {
+				listener(...args);
+			}
 		}
 	}
 
@@ -57,10 +60,15 @@ export class EventEmitter<EventMap extends Record<string, Array<unknown>>> {
 		const listeners = this.eventListeners[eventName];
 		if (listeners) {
 			listeners.delete(listener);
+			if (listeners.size === 0) {
+				delete this.eventListeners[eventName];
+			}
 		}
 	}
 
 	public offAll<K extends keyof EventMap>(eventName: K) {
-		delete this.eventListeners[eventName];
+		if (this.eventListeners[eventName]) {
+			delete this.eventListeners[eventName];
+		}
 	}
 }

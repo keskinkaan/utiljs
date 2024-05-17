@@ -40,6 +40,31 @@
     <img src="https://img.shields.io/node/v/%40kinbay%2Futiljs" alt="Version Node"/> 
   </a>
   <a href="https://pnpm.io/installation" target="_blank">
-    <img src="https://img.shields.io/badge/pnpm-%3E%3D%209.0.1-blue.svg" alt="Version Pnpm"/> 
+    <img src="https://img.shields.io/badge/pnpm-%3E%3D%209.1.0-blue.svg" alt="Version Pnpm"/> 
   </a>
 </p>
+
+### Installation
+
+First, clone the repossitory
+
+```sh
+git clone https://github.com/keskinkaan/utiljs.git
+```
+
+Then, install the dependencies
+
+```sh
+pnpm install
+```
+
+After installing the dependencies the following `pnpm` scripts become available:
+
+- `dev`: starts the application in [Jest](https://jestjs.io/) watch mode.
+- `test`: runs the tests with [Jest](https://jestjs.io/)
+- `build`: bundles the application for production into the build folder with [Tsup](https://tsup.egoist.dev)
+- `lint`: lint files with [Eslint](https://eslint.org/) based on the [typescript-eslint/parser](https://typescript-eslint.io/packages/parser/) and [typescript-eslint/eslint-plugin](https://typescript-eslint.io/)
+- `prettify`: formats the code with [Prettier](https://prettier.io/)
+- `format`: formats the code with [Prettier](https://prettier.io/) and [Eslint](https://eslint.org/) within the `src` folder
+- `commit`: commits the changes with [Commitizen](http://commitizen.github.io/cz-cli/)
+- `release`: releases a new version with [Changeset]()
