@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Read .nvmrc
-        run: echo "{NVMRC}={cat .nvmrc}" >> $(cat .nvmrc)
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
         id: nvm
 
       - uses: pnpm/action-setup@v2.4.0
