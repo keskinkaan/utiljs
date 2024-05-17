@@ -2,7 +2,7 @@ name: Publish
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: [CI]
+    workflows: [Tests & Build]
     branches: [dev]
     types: [completed]
 
