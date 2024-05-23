@@ -1,6 +1,5 @@
 name: Publish
 on:
-  workflow_dispatch:
   workflow_run:
     workflows: [Tests & Build]
     branches: [dev]
@@ -19,12 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Read .nvmrc
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        run: echo "{NVMRC}={cat .nvmrc}" >> $(cat .nvmrc)
         id: nvm
 
       - uses: pnpm/action-setup@v2.4.0
         with:
-          version: 9.0.1
+          version: 9.1.0
       - uses: actions/setup-node@v4
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
