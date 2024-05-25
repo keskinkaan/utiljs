@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.8.1
+
+### Patch Changes
+
+- Fetcher class has changed
+
 ## 0.8.0
 
 ### Minor Changes

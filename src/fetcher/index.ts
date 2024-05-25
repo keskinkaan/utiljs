@@ -1,15 +1,15 @@
+import type { TFetcherOptions } from '../types';
 import { Logger } from '../logger/index';
 
 export class Fetcher {
 	private apiUrl: string;
-	private apiKey?: string;
 	private requestInit: RequestInit;
 	private logger: Logger;
 	private headers: Record<string, string>;
+	private options: TFetcherOptions | undefined;
 
-	constructor(apiUrl: string, apiKey?: string) {
+	constructor(apiUrl: string, options?: TFetcherOptions) {
 		this.apiUrl = apiUrl;
-		this.apiKey = apiKey;
 		this.requestInit = {};
 		this.logger = new Logger();
 		this.headers = {
@@ -17,6 +17,13 @@ export class Fetcher {
 			'cache-control': 'no-cache',
 			'content-type': 'application/json'
 		};
+		this.options = options;
+		if (this.options?.token) {
+			this.headers = {
+				...this.headers,
+				...{ authorization: `Bearer ${this.options.token}` }
+			};
+		}
 	}
 
 	public async post<T, R extends object>(
@@ -24,13 +31,8 @@ export class Fetcher {
 		controller: AbortController | null = null,
 		timeout: number = 5000
 	) {
-		let apiUrl = this.apiUrl;
 		this.requestInit.method = 'POST';
 		this.requestInit.headers = this.headers;
-
-		if (this.apiKey) {
-			apiUrl = `${this.apiUrl}?apiKey=${this.apiKey}`;
-		}
 
 		this.requestInit.body = JSON.stringify(body);
 
@@ -38,7 +40,7 @@ export class Fetcher {
 		const id = setTimeout(() => controller?.abort(), timeout);
 		this.requestInit.signal = controller.signal;
 
-		const response = await fetch(apiUrl, this.requestInit);
+		const response = await fetch(this.apiUrl, this.requestInit);
 
 		try {
 			if (response.ok) {
@@ -76,19 +78,14 @@ export class Fetcher {
 		controller: AbortController | null = null,
 		timeout: number = 15000
 	) {
-		let apiUrl = this.apiUrl;
 		this.requestInit.method = 'GET';
 		this.requestInit.headers = this.headers;
-
-		if (this.apiKey) {
-			apiUrl = `${apiUrl}?apiKey=${this.apiKey}`;
-		}
 
 		if (controller === null) controller = new AbortController();
 		const id = setTimeout(() => controller?.abort(), timeout);
 		this.requestInit.signal = controller.signal;
 
-		const response = await fetch(`${apiUrl}`, this.requestInit);
+		const response = await fetch(this.apiUrl, this.requestInit);
 
 		try {
 			if (response.ok) {
@@ -126,19 +123,14 @@ export class Fetcher {
 		controller: AbortController | null = null,
 		timeout: number = 5000
 	) {
-		let apiUrl = this.apiUrl;
 		this.requestInit.method = 'DELETE';
 		this.requestInit.headers = this.headers;
-
-		if (this.apiKey) {
-			apiUrl = `${apiUrl}?apiKey=${this.apiKey}`;
-		}
 
 		if (controller === null) controller = new AbortController();
 		const id = setTimeout(() => controller?.abort(), timeout);
 		this.requestInit.signal = controller.signal;
 
-		const response = await fetch(`${apiUrl}`, this.requestInit);
+		const response = await fetch(this.apiUrl, this.requestInit);
 
 		try {
 			if (response.ok) {
@@ -177,13 +169,8 @@ export class Fetcher {
 		controller: AbortController | null = null,
 		timeout: number = 5000
 	) {
-		let apiUrl = this.apiUrl;
 		this.requestInit.method = 'PUT';
 		this.requestInit.headers = this.headers;
-
-		if (this.apiKey) {
-			apiUrl = `${this.apiUrl}?apiKey=${this.apiKey}`;
-		}
 
 		this.requestInit.body = JSON.stringify(body);
 
@@ -191,7 +178,7 @@ export class Fetcher {
 		const id = setTimeout(() => controller?.abort(), timeout);
 		this.requestInit.signal = controller.signal;
 
-		const response = await fetch(apiUrl, this.requestInit);
+		const response = await fetch(this.apiUrl, this.requestInit);
 
 		try {
 			if (response.ok) {
