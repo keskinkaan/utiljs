@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.8.2
+
+### Patch Changes
+
+- fetcher class put method has been changed with patch metod
+
 ## 0.8.1
 
 ### Patch Changes

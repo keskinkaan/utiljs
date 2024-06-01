@@ -164,12 +164,12 @@ export class Fetcher {
 		}
 	}
 
-	public async put<T, R extends object>(
+	public async patch<T, R extends object>(
 		body: T,
 		controller: AbortController | null = null,
 		timeout: number = 5000
 	) {
-		this.requestInit.method = 'PUT';
+		this.requestInit.method = 'PATCH';
 		this.requestInit.headers = this.headers;
 
 		this.requestInit.body = JSON.stringify(body);
