@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.9.0
+
+### Minor Changes
+
+Router has been removed
+
 ## 0.8.2
 
 ### Patch Changes
