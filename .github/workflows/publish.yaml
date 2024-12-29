@@ -5,7 +5,7 @@ on:
     branches: [dev]
     types: [completed]
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency: ${{ github.workflow }}-${{ github.ref_name }}
 
 permissions:
   contents: write
@@ -17,24 +17,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Read .nvmrc
-        run: echo "{NVMRC}={cat .nvmrc}" >> $(cat .nvmrc)
+        run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
         id: nvm
 
       - uses: pnpm/action-setup@v4
         with:
           version: 9.1.0
+
       - uses: actions/setup-node@v4
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          node-version: ${{ env.NVMRC }}
           cache: 'pnpm'
 
       - run: pnpm install
+
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm run release
+          publish: pnpm run release --no-verify
         env:
           HUSKY: 0
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
