@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.10.0
+
+### Minor Changes
+
+- 03bb722: nul guarder has been added
+
 ## 0.9.1
 
 ### Patch Changes
