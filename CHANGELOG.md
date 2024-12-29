@@ -10,7 +10,7 @@
 
 ### Minor Changes
 
-Router has been removed
+- Router has been removed
 
 ## 0.8.2
 
