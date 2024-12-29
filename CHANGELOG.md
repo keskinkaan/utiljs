@@ -1,5 +1,11 @@
 # @kinbay/utiljs
 
+## 0.9.1
+
+### Patch Changes
+
+- null guarder has been added
+
 ## 0.9.0
 
 ### Minor Changes
